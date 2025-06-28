@@ -2,66 +2,66 @@
 const style = document.createElement("style");
 style.textContent = `
   body {
-  background-color: rgb(243, 246, 247); /* COLOR DEL FONDO DE LA PÁGINA */
-  font-family: Arial, sans-serif;       /* TIPO DE LETRA GENERAL */
-  text-align: center;                   /* CENTRA TODO EL TEXTO */
-  padding: 30px;                        /* ESPACIO INTERNO ALREDEDOR DEL CONTENIDO */
-}
+    background-color: rgb(243, 246, 247); /* COLOR FONDO */
+    font-family: Arial, sans-serif;  /* TIPO LETRA */
+    text-align: center;   /* CENTRA TEXTO */
+    padding: 30px;  /* ESPACIO ALREDEDOR DEL CONTENIDO */
+  }
 
-h1 {
-  color: #d81b60;                       /* COLOR ROSA FUERTE DEL TÍTULO */
-  font-size: 28px;                      /* TAMAÑO DEL TÍTULO PRINCIPAL */
-  margin-bottom: 30px;                 /* ESPACIO ENTRE EL TÍTULO Y LAS TARJETAS */
-}
+  h1 {
+    color: #d81b60;   /* COLOR DEL TITULO */
+    font-size: 28px;    /* TAMAÑO DE LA LETRA DEL TITULO */
+    margin-bottom: 30px; /* ESPACIO ENTRE EL TÍTULO Y LAS CARTAS */
+  }
 
-.contenedor {
-  display: grid;                        /* DISTRIBUCIÓN EN CUADRÍCULA (GRID) */
-  grid-template-columns: repeat(2, 1fr); /* DOS COLUMNAS IGUALES */
-  gap: 30px;                            /* ESPACIO ENTRE TARJETAS */
-  justify-content: center;             /* CENTRA LAS TARJETAS EN HORIZONTAL */
-  max-width: 800px;                    /* ANCHO MÁXIMO DEL CONTENEDOR */
-  margin: 0 auto;                      /* CENTRADO AUTOMÁTICO HORIZONTAL */
-}
+  .contenedor {
+    display: grid;    /* DISTRIBUCION CARTAS */
+    grid-template-columns: repeat(2, 1fr); /* DOS COLUMNAS DE CARTAS */
+    gap: 30px;  /* ESPACIO ENTRE LAS CARTAS */
+    justify-content: center;  /* CENTRAR LAS CARTAS EN HORIZONTAL */
+    max-width: 800px;    /* ANCHO DEL CONTENEDOR QUE CONTIENE LAS CARTAS */
+    margin: 0 auto;   /* CENTRADO */
+  }
 
-.card {
-  background: white;                   /* FONDO BLANCO DE CADA TARJETA */
-  padding: 20px;                       /* ESPACIO INTERNO DE LA TARJETA */
-  border-radius: 15px;                 /* ESQUINAS REDONDEADAS */
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* SOMBRA SUAVE */
-  border: 2px solid black;             /* BORDE NEGRO ALREDEDOR DE CADA TARJETA */
-}
+  .card {
+    background: white; /* FONDO BLANCO DE CADA CARTA */
+    padding: 20px;     /* ESPACIO INTERNO DE LA CARTA */
+    border-radius: 15px;  /* ESQUINAS REDONDEADAS */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* SOMBRA */
+    border: 2px solid black;  /* BORDE NEGRO */
+  }
 
-.card h2 {
-  font-size: 18px;                     /* TAMAÑO DEL TÍTULO DE CADA TARJETA */
-  margin-bottom: 10px;                 /* ESPACIO ENTRE EL TÍTULO Y EL PRIMER CAMPO */
-}
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 
-input, select, button {
-  margin-top: 10px;                    /* ESPACIO ENTRE CADA ELEMENTO */
-  width: 100%;                         /* OCUPA TODO EL ANCHO DISPONIBLE */
-  padding: 10px;                       /* ESPACIO INTERNO DEL CAMPO */
-  font-size: 14px;                     /* TAMAÑO DEL TEXTO DE ENTRADA Y BOTONES */
-  border: 1px solid #ccc;              /* BORDE GRIS CLARO */
-  border-radius: 5px;                  /* ESQUINAS REDONDEADAS */
-  box-sizing: border-box;             /* INCLUYE EL BORDE Y PADDING EN EL ANCHO */
-}
+  input, select, button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 
-button {
-  background-color: rgb(163, 233, 225); /* COLOR DE FONDO DEL BOTÓN */
-  color: white;                        /* COLOR DEL TEXTO DEL BOTÓN */
-  border: none;                        /* SIN BORDE EXTRA */
-  font-weight: bold;                  /* TEXTO EN NEGRITAS */
-  cursor: pointer;                    /* CAMBIA EL CURSOR AL PASAR SOBRE EL BOTÓN */
-}
+  button {
+    background-color: rgb(163, 233, 225);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-button:hover {
-  background-color: #81e6d9;          /* COLOR DEL BOTÓN AL PASAR EL CURSOR ENCIMA */
-}
+  button:hover {
+    background-color: #81e6d9;
+  }
 
-p {
-  margin-top: 10px;                   /* ESPACIO ENTRE EL BOTÓN Y EL RESULTADO */
-  font-weight: bold;                  /* RESULTADO EN NEGRITAS */
-}
+  p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
 `;
 document.head.appendChild(style);
 
@@ -69,9 +69,9 @@ document.head.appendChild(style);
 const nombresVisibles = {
   longitud: {
     m: "Metros",
-    km: "Kilómetros",
-    cm: "Centímetros",
-    mm: "Milímetros",
+    km: "Kilometros",
+    cm: "Centimetros",
+    mm: "Milimetros",
     ft: "Pies",
     in: "Pulgadas",
     mi: "Millas",
@@ -80,8 +80,8 @@ const nombresVisibles = {
   volumen: {
     L: "Litros",
     mL: "Mililitros",
-    "m³": "Metros cúbicos",
-    "cm³": "Centímetros cúbicos"
+    "m^3": "Metros cubicos",
+    "cm^3": "Centimetros cubicos"
   },
   peso: {
     kg: "Kilogramos",
@@ -98,14 +98,14 @@ const nombresVisibles = {
   }
 };
 
-// FACTORES DE CONVERSIÓN
+// CONVERSION
 const factores = {
   longitud: {
     m: 1, km: 0.001, cm: 100, mm: 1000,
     ft: 3.28084, in: 39.3701, mi: 0.000621371, yd: 1.09361
   },
   volumen: {
-    L: 1, mL: 1000, "m³": 0.001, "cm³": 1000
+    L: 1, mL: 1000, "m^3": 0.001, "cm^3": 1000
   },
   peso: {
     kg: 1, g: 1000, mg: 1000000,
@@ -113,7 +113,7 @@ const factores = {
   }
 };
 
-// LLENAR LOS SELECTS CON VALORES FUNCIONALES Y TEXTOS VISIBLES
+// SELECTS
 function inicializarSelects() {
   for (let categoria in nombresVisibles) {
     const entrada = document.getElementById(`unidadEntrada-${categoria}`);
@@ -138,7 +138,7 @@ function inicializarSelects() {
   }
 }
 
-// FUNCIÓN PRINCIPAL
+// FUNCION PRINCIPAL
 function convertir(categoria) {
   const valor = parseFloat(document.getElementById(`valor-${categoria}`).value);
   const entrada = document.getElementById(`unidadEntrada-${categoria}`).value;
@@ -146,7 +146,7 @@ function convertir(categoria) {
   const resultadoElemento = document.getElementById(`resultado-${categoria}`);
 
   if (isNaN(valor)) {
-    resultadoElemento.textContent = "Ingresa un número válido.";
+    resultadoElemento.textContent = "Ingresa un numero valido.";
     return;
   }
 
@@ -160,30 +160,30 @@ function convertir(categoria) {
   resultadoElemento.textContent = `Resultado: ${resultado}`;
 }
 
-// CONVERSIÓN GENERAL CON FACTORES
+// CONVERSI0N GENERAL CON FACTORES
 function convertirPorFactor(categoria, valor, entrada, salida) {
   const base = valor / factores[categoria][entrada];
   const convertido = base * factores[categoria][salida];
   return convertido.toFixed(4);
 }
 
-// CONVERSIÓN DE TEMPERATURA
+// CONVERSI0N DE TEMPERATURA
 function convertirTemperatura(valor, entrada, salida) {
   let tempC;
   switch (entrada) {
     case "C": tempC = valor; break;
     case "F": tempC = (valor - 32) * 5 / 9; break;
     case "K": tempC = valor - 273.15; break;
-    default: return "Unidad no válida";
+    default: return "Unidad NO valida";
   }
 
   switch (salida) {
     case "C": return tempC.toFixed(2);
     case "F": return ((tempC * 9 / 5) + 32).toFixed(2);
     case "K": return (tempC + 273.15).toFixed(2);
-    default: return "Unidad no válida";
+    default: return "Unidad NO valida";
   }
 }
 
-// EJECUTAR AL CARGAR
+// DOM
 document.addEventListener("DOMContentLoaded", inicializarSelects);
