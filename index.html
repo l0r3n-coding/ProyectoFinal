@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Unidades</title>
+</head>
+<body>
+  <h1>Conversor de Unidades</h1>
+  <div class="contenedor">
+
+    <!-- Longitud -->
+    <div class="card">
+      <h2>Conversión de Longitud</h2>
+      <input type="number" id="valor-longitud" placeholder="Ingresa un valor">
+      <select id="unidadEntrada-longitud"></select>
+      <select id="unidadSalida-longitud"></select>
+      <button onclick="convertir('longitud')">Convertir</button>
+      <p id="resultado-longitud"></p>
+    </div>
+
+    <!-- Volumen -->
+    <div class="card">
+      <h2>Conversión de Volumen</h2>
+      <input type="number" id="valor-volumen" placeholder="Ingresa un valor">
+      <select id="unidadEntrada-volumen"></select>
+      <select id="unidadSalida-volumen"></select>
+      <button onclick="convertir('volumen')">Convertir</button>
+      <p id="resultado-volumen"></p>
+    </div>
+
+    <!-- Peso -->
+    <div class="card">
+      <h2>Conversión de Peso</h2>
+      <input type="number" id="valor-peso" placeholder="Ingresa un valor">
+      <select id="unidadEntrada-peso"></select>
+      <select id="unidadSalida-peso"></select>
+      <button onclick="convertir('peso')">Convertir</button>
+      <p id="resultado-peso"></p>
+    </div>
+
+    <!-- Temperatura -->
+    <div class="card">
+      <h2>Conversión de Temperatura</h2>
+      <input type="number" id="valor-temperatura" placeholder="Ingresa un valor">
+      <select id="unidadEntrada-temperatura"></select>
+      <select id="unidadSalida-temperatura"></select>
+      <button onclick="convertir('temperatura')">Convertir</button>
+      <p id="resultado-temperatura"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
